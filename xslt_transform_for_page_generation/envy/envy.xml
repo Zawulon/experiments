@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="enviroments.xslt"?>
+<enviroments>
+  <enviroment name="DEV Environment 1" release="1.3">
+    <servers>
+      <server name="srv_2_www_node1" description="WWW server [192.168.1.2]">
+        <applications>
+          <application checked="False" enabled="True" name="www_1" displayname="www_app_1_srv" description="www_app_1_srv" tag="WWW" InstallationPath="" SourcePath="">
+            <endpoints>
+              <endpoint name="app1" locale="">
+                <address uri="https://www.srv_w_www.pl/" check="false"/>
+              </endpoint>
+            </endpoints>
+          </application>
+        </applications>
+      </server>
+      <server name="srv_2_www_node2" description="WWW server [192.168.1.3]">
+        <applications>
+          <application checked="False" enabled="True" name="www_2" displayname="www_app_1_srv" description="www_app_1_srv" tag="WWW" InstallationPath="" SourcePath="">
+            <endpoints>
+              <endpoint name="app1" locale="">
+                <address uri="https://www.srv_w_www.pl/" check="false"/>
+              </endpoint>
+            </endpoints>
+          </application>
+        </applications>
+      </server>
+      <server name="gazeta.pl" description="info portal">
+        <applications>
+          <application checked="False" enabled="True" name="gazeta" displayname="gazeta" description="gazeta" tag="info" InstallationPath="" SourcePath="">
+            <endpoints>
+              <endpoint name="main site adress">
+                <address uri="http://gazeta.pl"/>
+              </endpoint>
+            </endpoints>
+          </application>
+        </applications>
+      </server>
+    </servers>
+  </enviroment>
+  <enviroment name="Extras">
+    <servers>
+      <server name="Central Logging Infrastructure" description="SPLUNK">
+        <applications>
+          <application checked="False" enabled="True" name="" displayname="SPLUNK">
+            <endpoints>
+              <endpoint name="SPLUNK">
+                <address uri="http://splunk.com"/>
+              </endpoint>
+            </endpoints>
+          </application>
+        </applications>
+      </server>
+      <server name="Central Logging Infrastructure" description="ELK Stack">
+        <applications>
+          <application checked="False" enabled="True" name="" displayname="Kibana" tag="Log" SourcePath="">
+            <endpoints>
+              <endpoint name="Kibana" locale="">
+                <address uri="http://kibana.com"/>
+              </endpoint>
+            </endpoints>
+          </application>
+        </applications>
+      </server>
+    </servers>
+  </enviroment>
+  <enviroment name="Cloud">
+    <servers>
+      <server name="cloud1" description="main server">
+        <applications>
+          <application checked="False" enabled="True" name="ESX Virtual Console" displayname="ESX Virtual Console" description="ESX Virtual Console">
+            <endpoints>
+              <endpoint name="http console managment">
+                <address uri="https://cloud1/"/>
+              </endpoint>
+            </endpoints>
+          </application>
+          <application checked="False" enabled="True" name="srv_sql_2008_1 [192.168.3.20]"/>
+          <application checked="False" enabled="True" name="srv_sql_2012_1 [192.168.3.21]"/>
+          <application checked="False" enabled="True" name="srv_www_2008_1 [192.168.3.22]"/>
+          <application checked="False" enabled="True" name="srv_www_2012_1 [192.168.3.23]"/>
+          <application checked="False" enabled="True" name="srv_app_2008_1 [192.168.3.24]"/>
+          <application checked="False" enabled="True" name="srv_app_2008_2 [192.168.3.25]"/>
+          <application checked="False" enabled="True" name="srv_app_2008_3 [192.168.3.26]"/>
+        </applications>
+      </server>
+    </servers>
+  </enviroment>
+  <enviroment name="Mr. Jetkins">
+    <servers>
+      <server name="jenkins" description="Continues Deployment">
+        <applications>
+          <application checked="False" enabled="True" name="Mr. Jetkins" displayname="Mr. Jetkins" description="Mr. Jetkins">
+            <endpoints>
+              <endpoint name="Build browser">
+                <address uri="http://jenkins:8080"/>
+              </endpoint>
+            </endpoints>
+          </application>
+        </applications>
+      </server>
+    </servers>
+  </enviroment>
+</enviroments>

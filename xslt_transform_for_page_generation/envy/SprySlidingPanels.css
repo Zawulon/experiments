@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/* SprySlidingPanels.css - version 0.1 - Spry Pre-Release 1.6.1 */
+
+/* Copyright (c) 2006. Adobe Systems Incorporated. All rights reserved. */
+
+/* This is the selector for the main SlidingPanels container. This selector
+ * defines the width and height of the view port for the widget. Note that
+ * this selector does not set the overflow property since that is done programatically
+ * by the widget. Setting the overflow property programatically ensures that
+ * the contens of the widget will be fully visible should JavaScript be disabled
+ * in the browser.
+ *
+ * If you want to constrain the width of the SlidingPanels widget, set a width on
+ * the SlidingPanels container. By default, our sliding panels widget expands
+ * horizontally to fill up available space.
+ *
+ * The SlidingPanels container is positioned relative so that content inside it
+ * can be positioned relative to its upper left corner.
+ *
+ * Avoid placing any CSS border or padding properties on the SlidingPanels container
+ * as they can affect the proper positioning and sliding animations of the contents
+ * inside the container.
+ *
+ * The name of the class ("SlidingPanels") used in this selector is not necessary
+ * to make the widget function. You can use any class name you want to style the
+ * SlidingPanels container.
+ */
+.SlidingPanels {
+	position: relative;
+	width: 100%;
+	height: 616px;
+	padding: 0px;
+	border: none;
+	margin: 10px;
+}
+
+/* This is the selector for the container that holds all of the content panels
+ * for the widget. The SlidingPanelsContentGroup container is what gets programtically
+ * positioned to create the slide animation. It is also what governs the layout of
+ * the panels.
+ *
+ * By default, the width of the container is the same as its parent, the SlidingPanels
+ * container.
+ *
+ * You can make the panels within the SlidingPanelsContentGroup container layout
+ * horizontally by giving the SlidingPanelsContentGroup container a width that is as wide
+ * or larget than the sum of the widths of all of the content panels, and then floating
+ * the content panels inside the SlidingPanelsContentGroup container so they all appear
+ * on the same line. You may also need to float the SlidingPanels and SlidingPanelsContentGroup
+ * containers to insure that none of the content panels "leak" outside of the widget.
+ *
+ * Avoid placing any CSS border, margin, or padding properties on the SlidingPanels
+ * container as they can affect the proper positioning and sliding animations of the
+ * the container within the widget.
+ *
+ * The name of the class ("SlidingPanelsContentGroup") used in this selector is not
+ * necessary to make the widget function. You can use any class name you want to style the
+ * SlidingPanelsContentGroup container.
+ */
+.SlidingPanelsContentGroup {
+	position: relative;
+	width: 100%;
+	margin: 0px;
+	padding: 10px;
+	border: none;
+}
+
+
+/* This is the selector for the container that holds content for a given panel. In our
+ * default style implementation, the dimensions of each content panel exactly match the
+ * dimensions of the view port (SlidingPanels) container. This ensures that only one
+ * panel ever shows within the view port.
+ *
+ * Avoid placing any CSS border, margin, or padding properties on the SlidingPanels
+ * container as they can affect the proper positioning and sliding animations of the
+ * the panel within the widget. You can place border, margins and padding on any content
+ * *inside* the content panel.
+ *
+ * The name of the class ("SlidingPanelsContent") used in this selector is not
+ * necessary to make the widget function. You can use any class name you want to style the
+ * SlidingPanelsContent container.
+ */
+.SlidingPanelsContent {
+	width: 95%;
+	height: 600px;
+	overflow: auto;
+	margin: 8px;
+	padding: 4px;
+	border: 1px solid;
+}
+
+/* The class used in this selector is programatically added to the SlidingPanels container
+ * anytime we are animating between panels. This rule makes sure that *all* content inside
+ * the widget is overflow:none to avoid a rendering glitch that occurs in FireFox 1.5 whenever
+ * there is an element inside the widget that displays a scrollbar.
+ *
+ * The class is automatically removed once the animation has stopped so that the overflow
+ * properties of the content inside the widget should be restored.
+ */
+.SlidingPanelsAnimating * {
+	overflow: hidden !important;
+}
+
+/* The class used in this selector is programatically added to the SlindingPanelsContent
+ * container that is currently visible in the view port. The class is automatically removed
+ * when the widget switches to a different panel.
+ */
+.SlidingPanelsCurrentPanel {
+}
+
+/* The class used in this selector is programatically added to the SlidingPanels container
+ * anytime the SlidingPanels container is given focus. The class is automatically removed
+ * once the SlidingPanels container loses focus.
+ */
+.SlidingPanelsFocused {
+}
+body, td, th, input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+.liveSample {
+	background-color: #FFFFCC;
+	color: black;
+	padding: 4px;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 1px solid #000000;
+}
+.demoDiv {
+	background-color: #CCCCCC;
+	width: 400px;
+}
+.highlited {
+	background-color: #FFFFCC;
+	color: #000000;
+}
+.grayBG {
+	background-color: #CCCCCC;
+}
+
+pre {
+	font-family: "Courier New", Courier, monospace;
+	background-color: #F0F7FE;
+	padding: 5px;
+	overflow: auto;
+	font-size: 1.1em;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 1px solid #CCCCCC;
+	}
+h3 {
+	background-color: #F3F3F3;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	font-size: 100%;
+	line-height: 150%;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+}
+h4{
+	color: #000099;
+	font-variant: small-caps;
+	font-size:120%;
+}
+td, th{
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #CCCCCC;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+th {
+	background-color: #F3F3F3;
+	vertical-align: top;
+}
+a {
+	text-decoration: none;
+}
